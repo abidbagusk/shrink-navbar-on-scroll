@@ -1,2 +1,126 @@
 $main-font: 'Poppins',
 sans-serif;
+$main-color : #0c005a;
+$secondary-color : #ff0000;
+$ambient-color : #bc2525;
+$bright-color : #FFFFFF;
+$dark-color : #000000;
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+}
+
+// style for list
+%parent-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 60px;
+}
+
+// Navbar
+.navbar {
+    width: 100%;
+    position: fixed;
+    background-color: $main-color;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-gap: 10px;
+    grid-auto-rows: 60px;
+    transition: all 0.3s;
+
+    .navbar__brand {
+        font-family: $main-font;
+        font-size: 16px;
+        text-align: center;
+
+        a {
+            color: $bright-color;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 13px;
+            line-height: 60px;
+            transition: 0.2s ease-out;
+
+            &:hover {
+                letter-spacing: 3px;
+                transition: .2s ease-in;
+            }
+        }
+    }
+
+    .navbar__menu-list {
+        background-color: #1d0e7c;
+
+        ul {
+            @extend %parent-list;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                padding: 0 30px;
+
+                a {
+                    color: $bright-color;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-family: $main-font;
+                    font-size: 12px;
+                    position: relative;
+                    letter-spacing: 2px;
+                }
+
+                a:before {
+                    position: absolute;
+                    bottom: -5px;
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    border-radius: 2px;
+                    background: red;
+                    transition: all .5s;
+                }
+
+                a:hover {
+                    &:before {
+                        width: 50%;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar__profile {
+        ul {
+            @extend %parent-list;
+            text-align: left;
+
+            li {
+                display: inline-block;
+                color: $bright-color;
+                font-size: 12px;
+                padding: 0 10px;
+                cursor: pointer;
+
+                .badge {
+                    padding: 5px;
+                    margin-right: 5px;
+                    border-radius: 2px;
+                    background-color: $secondary-color;
+                }
+
+                .badge--secondary {
+                    padding: 5px;
+                    margin-right: 5px;
+                    border-radius: 2px;
+                    background-color: orange;
+                }
+            }
+        }
+    }
+}
