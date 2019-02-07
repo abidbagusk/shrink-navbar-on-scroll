@@ -8,7 +8,7 @@ html {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  line-height: 60px;
+  line-height: 80px;
 }
 
 .navbar {
@@ -18,7 +18,7 @@ html {
   display: grid;
   grid-template-columns: 200px 1fr 200px;
   grid-gap: 10px;
-  grid-auto-rows: 60px;
+  grid-auto-rows: 80px;
   transition: all 0.3s;
 }
 .navbar .navbar__brand {
@@ -32,7 +32,7 @@ html {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 13px;
-  line-height: 60px;
+  line-height: 80px;
   transition: 0.2s ease-out;
 }
 .navbar .navbar__brand a:hover {
